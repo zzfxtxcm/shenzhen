@@ -86,6 +86,7 @@ end
 group :production do
   gem 'pg', '0.15.1'
   gem 'unicorn'
+  gem 'unicorn-rails'
   gem 'unicorn-worker-killer'
 end
 
@@ -100,8 +101,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-if RUBY_VERSION =~ /1.9/
-  Encoding.default_external = Encoding::UTF_8
-  Encoding.default_internal = Encoding::UTF_8
-end
