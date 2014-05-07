@@ -5,7 +5,7 @@ working_directory APP_PATH
 shared_root = "/home/shenzhen/www/shared"
 
 # Listen on fs socket for better performance
-listen "/tmp/unicorn_shenzhen.sock", :backlog => 64
+listen "#{shared_root}/tmp/unicorn.sock", :backlog => 64
 listen 5755, :tcp_nopush => false
 
 # Nuke workers after 30 seconds instead of 60 seconds (the default)
