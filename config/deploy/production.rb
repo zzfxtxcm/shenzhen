@@ -22,7 +22,7 @@ role :db,  %w{shenzhen@115.28.216.223}
 # server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 # server 'meifang365.com', user: 'wwwroot', roles: %w{web}, port: 22229
 # server 'meifang365.com', user: 'wwwroot', roles: %w{web}, port: 22
-server '115.28.216.223', user: 'shenzhen', roles: %w{web}
+server '115.28.216.223', user: 'shenzhen',  password: 'meifang123456',roles: %w{web app db}
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
@@ -45,3 +45,7 @@ server '115.28.216.223', user: 'shenzhen', roles: %w{web}
 #     # password: 'please use keys'
 #   }
 # setting per server overrides global ssh_options
+
+# set :ssh_options, {
+#   verbose: :debug
+# }

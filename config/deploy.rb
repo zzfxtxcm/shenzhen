@@ -4,7 +4,7 @@
 lock '3.1.0'
 
 set :application, 'shenzhen'
-set :repo_url, 'git@github.org:zzfxtxcm/shenzhen'
+set :repo_url, 'https://github.com/zzfxtxcm/shenzhen.git'
 set :branch, 'master'
 
 set :deploy_to, '/home/shenzhen/www'
@@ -24,8 +24,8 @@ set :keep_releases, 5
 # rvm
 set :rvm_ruby_version, '2.1.1'
 
-# SSHKit.config.command_map[:rake]  = "bundle exec rake"
-# SSHKit.config.command_map[:rails] = "bundle exec rails"
+SSHKit.config.command_map[:rake]  = "bundle exec rake"
+SSHKit.config.command_map[:rails] = "bundle exec rails"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
