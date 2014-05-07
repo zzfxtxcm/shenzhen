@@ -34,7 +34,7 @@
 /log/sunspot-solr-development.log.lck
 
 # Ignore other unneeded files.
-database.yml
+# database.yml
 doc/
 *.swp
 *~

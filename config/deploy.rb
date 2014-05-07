@@ -58,13 +58,13 @@ SSHKit.config.command_map[:rails] = "bundle exec rails"
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-desc 'make production database.yml link'
-task :symlink_db_yml do
-  on roles(:app) do
-    execute "ln -s #{shared_path}/config/database.yml
-            #{release_path}/config/database.yml"
-  end
-end
+# desc 'make production database.yml link'
+# task :symlink_db_yml do
+#   on roles(:app) do
+#     execute "ln -s #{shared_path}/config/database.yml
+#             #{release_path}/config/database.yml"
+#   end
+# end
 
 namespace :deploy do
   set :unicorn_config, "#{current_path}/config/unicorn.rb"
