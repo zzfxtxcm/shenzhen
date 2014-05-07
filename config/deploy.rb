@@ -4,11 +4,11 @@
 lock '3.1.0'
 
 set :application, 'shenzhen'
-set :scm, :git
 set :repo_url, 'https://github.com/zzfxtxcm/shenzhen.git'
 set :branch, 'master'
 
 set :deploy_to, '/home/shenzhen/www'
+set :scm, :git
 
 set :format, :pretty
 set :log_level, :debug
