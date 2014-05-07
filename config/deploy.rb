@@ -25,8 +25,8 @@ set :keep_releases, 5
 # rvm
 set :rvm_ruby_version, '2.1.1'
 
-SSHKit.config.command_map[:rake]  = "bundle exec rake"
-SSHKit.config.command_map[:rails] = "bundle exec rails"
+# SSHKit.config.command_map[:rake]  = "bundle exec rake"
+# SSHKit.config.command_map[:rails] = "bundle exec rails"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
