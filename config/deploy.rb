@@ -61,8 +61,7 @@ SSHKit.config.command_map[:rails] = "bundle exec rails"
 desc 'make production database.yml link'
 task :symlink_db_yml do
   on roles(:app) do
-    execute "ln -s #{shared_path}/config/database.yml
-            #{release_path}/config/database.yml"
+    execute "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
 end
 
