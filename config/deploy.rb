@@ -3,30 +3,29 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-set :application, 'meifang'
-# set :user, 'wwwroot'
-set :user, 'vagrant'
-set :repo_url, 'https://github.com/zzfxtxcm/meifang.git'
+set :application, 'shenzhen'
+set :repo_url, 'git@github.org:zzfxtxcm/shenzhen'
 set :branch, 'master'
 
-# set :deploy_to, '/home/wwwroot/www/meifang'
-set :deploy_to, '/home/meifang/www/meifang'
-set :scm, :git
+set :deploy_to, '/home/shenzhen/www'
 
 set :format, :pretty
 set :log_level, :debug
 set :pry, true
 
+# # files we want symlinking to specific entries in shared
+# set :linked_files, %w{config/database.yml config/application.yml config/secrets.yml}
+#
+# # dirs we want symlinking to shared
+# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+
 set :keep_releases, 5
 
-set :rvm_type, :user
-set :rvm_ruby_version, 'ruby-2.1.0'
+# rvm
+set :rvm_ruby_version, '2.1.1'
 
-set :linked_files, %w{config/database.yml}
-
-SSHKit.config.command_map[:rake]  = "bundle exec rake"
-SSHKit.config.command_map[:rails] = "bundle exec rails"
-
+# SSHKit.config.command_map[:rake]  = "bundle exec rake"
+# SSHKit.config.command_map[:rails] = "bundle exec rails"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -58,13 +57,13 @@ SSHKit.config.command_map[:rails] = "bundle exec rails"
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-# desc 'make production database.yml link'
-# task :symlink_db_yml do
-#   on roles(:app) do
-#     execute "ln -s #{shared_path}/config/database.yml
-#             #{release_path}/config/database.yml"
-#   end
-# end
+desc 'make production database.yml link'
+task :symlink_db_yml do
+  on roles(:app) do
+    execute "ln -s #{shared_path}/config/database.yml
+            #{release_path}/config/database.yml"
+  end
+end
 
 namespace :deploy do
   set :unicorn_config, "#{current_path}/config/unicorn.rb"
