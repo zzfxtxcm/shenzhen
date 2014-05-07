@@ -4,6 +4,7 @@
 lock '3.1.0'
 
 set :application, 'shenzhen'
+set :scm, :git
 set :repo_url, 'https://github.com/zzfxtxcm/shenzhen.git'
 set :branch, 'master'
 
