@@ -58,12 +58,12 @@ set :rvm_ruby_version, '2.1.1'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-desc 'make production database.yml link'
-task :symlink_db_yml do
-  on roles(:app) do
-    execute "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-  end
-end
+# desc 'make production database.yml link'
+# task :symlink_db_yml do
+#   on roles(:app) do
+#     execute "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+#   end
+# end
 
 namespace :deploy do
   set :unicorn_config, "#{current_path}/config/unicorn.rb"
@@ -110,5 +110,5 @@ namespace :deploy do
   before 'start', 'rvm:hook'
   after :finishing, 'deploy:cleanup'
 
-  after 'bundler:install', :symlink_db_yml
+  # after 'bundler:install', :symlink_db_yml
 end
