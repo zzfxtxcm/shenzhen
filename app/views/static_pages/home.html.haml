@@ -454,36 +454,36 @@
       float: none;
       }
       </style>
-    .pull-left.mt10
-      .title3_l
-        %p 品牌展示
-      .title3_r{align: "right", style: "width:1048px"}
-        %a{href: ""} 更多
-      .clearfix
-      #demo.mt20.mb20
-        #indemo
-          #demo1
-            - 12.times do |n|
-              = image_tag("tmp/#{n+1}.jpg")
-          #demo2
-      :javascript
-        <!--
-        var speed=20;
-        var tab=document.getElementById("demo");
-        var tab1=document.getElementById("demo1");
-        var tab2=document.getElementById("demo2");
-        tab2.innerHTML=tab1.innerHTML;
-        function Marquee(){
-          if(tab2.offsetWidth-tab.scrollLeft<=0)
-            tab.scrollLeft-=tab1.offsetWidth
-          else{
-            tab.scrollLeft++;
-          }
-        }
-        var MyMar=setInterval(Marquee,speed);
-        tab.onmouseover=function() {clearInterval(MyMar)};
-        tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
-        -->
+    / .pull-left.mt10
+    /   .title3_l
+    /     %p 品牌展示
+    /   .title3_r{align: "right", style: "width:1048px"}
+    /     %a{href: ""} 更多
+    /   .clearfix
+    /   #demo.mt20.mb20
+    /     #indemo
+    /       #demo1
+    /         - 12.times do |n|
+    /           = image_tag("tmp/#{n+1}.jpg")
+    /       #demo2
+    /   :javascript
+    /     <!--
+    /     var speed=20;
+    /     var tab=document.getElementById("demo");
+    /     var tab1=document.getElementById("demo1");
+    /     var tab2=document.getElementById("demo2");
+    /     tab2.innerHTML=tab1.innerHTML;
+    /     function Marquee(){
+    /       if(tab2.offsetWidth-tab.scrollLeft<=0)
+    /         tab.scrollLeft-=tab1.offsetWidth
+    /       else{
+    /         tab.scrollLeft++;
+    /       }
+    /     }
+    /     var MyMar=setInterval(Marquee,speed);
+    /     tab.onmouseover=function() {clearInterval(MyMar)};
+    /     tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
+    /     -->
   / 三楼end
   / 4楼购房百科
   .baike
